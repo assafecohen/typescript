@@ -1,15 +1,16 @@
-function combine(input1: number | string, input2: number | string) {
-  let result;
-  if (typeof input1 == 'number' && typeof input2 === 'number') {
-    result = input1 + input2;
-  } else {
-    result = input1.toString() + input2.toString();
-  }
+let userInput: unknown;
+let userName: string;
 
-  return result;
+userInput = 5;
+userInput = 'Max';
+
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-const combiendAges = combine(30, 26);
-console.log(combiendAges);
-const combiendNames = combine('max', 'assaf');
-console.log(combiendNames);
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+  // while(true){};
+}
+
+generateError('an error!', 500);
